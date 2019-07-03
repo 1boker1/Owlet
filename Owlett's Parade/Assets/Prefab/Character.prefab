@@ -75,7 +75,8 @@ MonoBehaviour:
   currentSuit: {fileID: 3555529928931888308}
   chamberSuit: {fileID: 2488276488342508227}
   suitAnimator: {fileID: 3555529928931888305}
-  healthSystem: {fileID: 3894820478716779728}
+  invulnerabilityTime: 1
+  invulnerable: 0
 --- !u!114 &3894820478716779728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,10 +89,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6b5ffb67f3d9194cbdf39b3a64d1b4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 6
-  currentHealth: 6
-  invulnerabilityTime: 1
-  invulnerable: 0
+  controller: {fileID: 3555529927941697223}
+  maxHealth: {fileID: 11400000, guid: 90b58ee1f9203c740b2680fab5639082, type: 2}
+  currentHealth: {fileID: 11400000, guid: 575be76de128e684fa4c1a563a5177a2, type: 2}
 --- !u!114 &3555529927941697220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,6 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b6ea62697bdbb94ba7187ce5c16b142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  smoothSpeedValue: 0.1
   walkSpeed: 7.5
   rotationSpeed: 15
 --- !u!114 &3555529927941697226
@@ -170,11 +171,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3555529927941697217}
     m_Modifications:
-    - target: {fileID: 2591058608857661781, guid: ee15c3d666025e94eab031c52dd45c38,
-        type: 3}
-      propertyPath: m_Name
-      value: Light Suit
-      objectReference: {fileID: 0}
     - target: {fileID: 2591058608857661780, guid: ee15c3d666025e94eab031c52dd45c38,
         type: 3}
       propertyPath: passive
@@ -254,6 +250,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2591058608857661781, guid: ee15c3d666025e94eab031c52dd45c38,
+        type: 3}
+      propertyPath: m_Name
+      value: Light Suit
       objectReference: {fileID: 0}
     - target: {fileID: 2591058608857661783, guid: ee15c3d666025e94eab031c52dd45c38,
         type: 3}
@@ -482,16 +483,6 @@ PrefabInstance:
       propertyPath: controller
       value: 
       objectReference: {fileID: 3555529927941697223}
-    - target: {fileID: 2415735716381575510, guid: 2a78cf91763460548920074c3b323869,
-        type: 3}
-      propertyPath: m_Name
-      value: Heavy
-      objectReference: {fileID: 0}
-    - target: {fileID: 2415735716381575510, guid: 2a78cf91763460548920074c3b323869,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2377686734398490071, guid: 2a78cf91763460548920074c3b323869,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -558,6 +549,16 @@ PrefabInstance:
       propertyPath: spawnPosition
       value: 
       objectReference: {fileID: 6799033049496566919}
+    - target: {fileID: 2415735716381575510, guid: 2a78cf91763460548920074c3b323869,
+        type: 3}
+      propertyPath: m_Name
+      value: Heavy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2415735716381575510, guid: 2a78cf91763460548920074c3b323869,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5939909977428128004, guid: 2a78cf91763460548920074c3b323869,
         type: 3}
       propertyPath: m_Layer

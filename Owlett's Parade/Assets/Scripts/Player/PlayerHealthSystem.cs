@@ -7,11 +7,11 @@ public class PlayerHealthSystem : MonoBehaviour, IHealth
 {
     [SerializeField] private Controller controller;
 
-    [SerializeField] private int maxHealth;
-    [SerializeField] private int currentHealth;
+    [SerializeField] private IntValue maxHealth;
+    [SerializeField] private IntValue currentHealth;
 
-    public int MaxHealth { get => currentHealth; set => currentHealth = value; }
-    public int CurrentHealth { get => currentHealth; set => currentHealth = value; }
+    public int MaxHealth { get => currentHealth.value; set => currentHealth.value = value; }
+    public int CurrentHealth { get => currentHealth.value; set => currentHealth.value = value; }
 
     private bool dead = false;
 

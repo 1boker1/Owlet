@@ -15,11 +15,11 @@ public class Suit : MonoBehaviour
 
     public bool isInChamber = true;
 
-    [SerializeField] private int maxArmor;
-    [SerializeField] private int currentArmor;
+    [SerializeField] private IntValue maxArmor;
+    [SerializeField] private IntValue currentArmor;
 
-    public int MaxArmor { get => maxArmor; set => maxArmor = value; }
-    public int CurrentArmor { get => currentArmor; set => currentArmor = value; }
+    public int MaxArmor { get => maxArmor.value; set => maxArmor.value = value; }
+    public int CurrentArmor { get => currentArmor.value; set => currentArmor.value = value; }
 
     [SerializeField] private Controller controller;
 
@@ -33,14 +33,14 @@ public class Suit : MonoBehaviour
 
     public int DecreaseArmor(int amount)
     {
-        if (amount > currentArmor)
+        if (amount > CurrentArmor)
         {
-            amount -= currentArmor;
-            currentArmor = 0;
+            amount -= CurrentArmor;
+            CurrentArmor = 0;
         }
         else
         {
-            currentArmor -= amount;
+            CurrentArmor -= amount;
         }
 
         return amount;
@@ -60,7 +60,7 @@ public class Suit : MonoBehaviour
 
     public void HealSuit(bool full, int amount)
     {
-        currentArmor = full ? maxArmor : currentArmor;
+        CurrentArmor = full ? MaxArmor : CurrentArmor;
 
         suitHealthSystem.GetHealed(full ? suitHealthSystem.MaxHealth : amount);
     }

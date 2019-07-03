@@ -58,6 +58,7 @@ public class Controller : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Q)) ChangeSuit();
             //else if (Input.GetButtonDown(stealSuit.button) && stealSuit.available) ChangeState(stealSuit);
+            if (currentSuit == null) return;
             if (Input.GetButtonDown(currentSuit.attack.button) && currentSuit.attack.available) ChangeState(currentSuit.attack);
             if (Input.GetButtonDown(currentSuit.ability1.button) && currentSuit.ability1.available) ChangeState(currentSuit.ability1);
             if (Input.GetButtonDown(currentSuit.ability2.button) && currentSuit.ability2.available) ChangeState(currentSuit.ability2);
